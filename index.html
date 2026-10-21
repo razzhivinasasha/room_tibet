@@ -5,31 +5,42 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>РумТибет</title>
         <link rel="stylesheet" href="index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+        <!--Вставить поиск по словам-->    
         <script src="main.js" defer></script>
     </head>
     <body>
-        <header>
-            <img src="img/главная.png" alt="фото гор Тибета">
+        <header class="header-img"><!--фон страницы-->
 
-            <div class="h-top">
-                <div class="logo">
-                    <img src="" alt="">
+            <div class="h-content">
+                <div class="h-top">
+                    <div class="h-logo">
+                        <img src="img/лого.svg" alt="Логотип Рум     Тибет"class="logo-img">
+                    </div>
+
+                    <!-- Кнопка бургера -->
+                    <button type="button" class="new-menu" aria-label="Открыть меню"></button>
+
+                    <nav class="h-menu">
+                        <!-- Кнопка бургера -->
+                        <button type="button" class="new-menu-2"     aria-label="Закрыть меню"></button>
+                        <ul>
+                            <li><a href="#">Про гида</a></li>
+                            <li><a href="#">Программа тура</a></li>
+                            <li><a href="#">Стоимость</a></li>
+                            <li><a href="#">Блог</a></li>
+                            <li><a href="#">Контакты</a></li>
+                        </ul>
+                    </nav>
                 </div>
-
-                <!--Сделать скрытое меню-->
-                <nav class="h-menu">
-                    <ul>
-                        <li><a href="">&#8250;Про гида</a></li>
-                        <li><a href="">&#8250;Программа тура</li>
-                        <li><a href="">&#8250;Стоимость</a></li>
-                        <li><a href="">&#8250;Блог</a></li>
-                        <li><a href="">&#8250;Контакты</a></li>
-                    </ul>
-                </nav>
-            </div>
-
-            <h1>Насладись прогулкой в горы с командой единомышленников</h1>
-            <button type="button">Найти программу</button>
+    
+                <div class="h-bottom">
+                    <h1>Насладись прогулкой в горы с командой единомышленников</h1>
+                    <button type="button" class="h-button">Найти программу</button>
+                </div> 
+            </div>   
         </header>
 
         <main>
