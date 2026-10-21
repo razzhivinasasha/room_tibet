@@ -106,7 +106,6 @@ body {
     /* Выталкивает элемент к правому краю флекс-контейнера */
     cursor: pointer;
 }
-
 .new-menu-2 {
     position: absolute;
     z-index: 2;
@@ -121,7 +120,6 @@ body {
     border: none; 
     cursor: pointer;
 }
-
 /*Скрытое меню*/
 .h-menu {
     position: absolute;
@@ -193,6 +191,21 @@ h1 {
     margin: 30px 0;
 }
 h1, h2, h3, p, a {
-        word-break: break-word;
-        overflow-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+@media screen and (min-width: 390.2px) and (max-width: 480px) {
+    body {
+        width: 100%;
+        height: auto;
     }
+    .header-img {
+        max-width: 480px;
+    }
+    /*Скрытое меню*/
+    .h-menu {
+        right: 85px;
+    }
+    
+}
