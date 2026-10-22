@@ -1,10 +1,11 @@
 html {
-    box-sizing: border-box;
+    box-sizing: inherit;
     scroll-behavior: smooth; /*плавный переход по старнице*/
     -webkit-tap-highlight-color: transparent; /* Отменяет стандартную мобильную подсветку браузера */
+    overflow: hidden; /*скрывает все, что "вылезает" за пределы контейнера.*/
 }
 *, *::before, *::after {
-    box-sizing: inherit;
+    box-sizing: border-box;
 }
 :root {
     --font-family: "Nunito Sans", sans-serif;
@@ -64,22 +65,28 @@ body {
     padding: 0;
 }
 
+/* Сбрасываем встроенные отступы у всех текстовых элементов и списков сразу */
+h1, h2, h3, p, ul, a, li {
+    margin: 0;
+    padding: 0;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
 .header-img {
+    width: 100%;
+    max-width: 390px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 16px 50px;
+    position: relative;
+    z-index: 0;
     background-image: url(img/главная.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    width: 100%; /* занимает полную ширину контейнера-обертки */
-    max-width: 390px;
-    min-height: 600px;
-    overflow: hidden; /*скрывает все, что "вылезает" за пределы контейнера.*/
-}
-.h-content {
-    height: calc(600px - 40px); /* Высота точно как у фона (600px) минус отступы top/bottom (20px + 20px) */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 20px 16px;
 }
 .h-top {
     display: flex;
@@ -92,7 +99,6 @@ body {
     height: auto;
 }
 .new-menu {
-    display: block; /*display: block; Пишется в самом начале , что бы его сталот видно*/
     position: relative;
     z-index: 1;
     width: 30px;
@@ -102,22 +108,6 @@ body {
     background-position: center;
     background-color: transparent; /*прозрачный фон для кнопки*/
     border: none;
-    margin-left: auto; 
-    /* Выталкивает элемент к правому краю флекс-контейнера */
-    cursor: pointer;
-}
-.new-menu-2 {
-    position: absolute;
-    z-index: 2;
-    top: 16px;
-    right: 16px;
-    width: 24px;
-    height: 24px;
-    background-image: url(img/close.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: transparent;
-    border: none; 
     cursor: pointer;
 }
 /*Скрытое меню*/
@@ -126,14 +116,16 @@ body {
     top: 0;
     right: 0;
     z-index: 2;
-    width: 290px;
+    width: 80%;
+    max-width: 290px;
     min-height: 535px;
     background-color: var(--deep-teal-background);
-    /* Скрываем */
-    opacity: 0;
+    opacity: 0;/*Скрываем */
     visibility: hidden; /*элемент полностью невидимым и недоступным для кликов*/
     transform: translateY(-10px);
     transition: all 0.3s ease;
+    margin:  0;
+    padding: 16px;
 }
 /* СОСТОЯНИЕ КОГДА МЕНЮ ОТКРЫТО (этот класс добавит JS) */
 .h-menu.is-open {
@@ -141,9 +133,32 @@ body {
     visibility: visible;/*возвращает элементу его стандартное видимое состояние.*/
     transform: translateY(0);
 }
+.new-menu-2 {
+    width: 24px;
+    height: 24px;
+    background-image: url(img/close.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    border: none; 
+    cursor: pointer;
+    margin-left: auto; 
+    display: block;
+}
 .h-menu ul {
-    margin: 50px 16px 0 ;
-    padding: 0 16px;
+    padding: 16px;
+}
+li+li {
+    padding-top: 16px;
+}
+li {
+    list-style-type: none;
+    /* Указываем путь к иконке-маркеру*/
+    list-style-image: url('img/li.svg');
+    
+}
+li:active {
+    list-style-image: url('img/li-yellow.svg'); 
 }
 a {
     text-decoration: none;
@@ -152,60 +167,33 @@ a {
     line-height: 129%;
     color: var(--white-color);
 }
-li {
-    list-style-type: none;
-    /* Указываем путь к иконке-маркеру */
-    list-style-image: url('img/li.svg');
-    
-}
-li+li {
-    padding-top: 16px;
-}
 a:active {
     text-decoration: underline;
     color: var(--yelow-color);
-}
-li:active {
-    list-style-image: url('img/li-yellow.svg'); 
 }
 h1 {
     color: var(--white-color);
     font-family: var(--second-family);
     font-weight: 700;
-    font-size: 28px;
+    font-size: 24px;
     line-height: 150%;
+    margin-top: auto;
+    padding-bottom: 30px;
 }
 .h-button {
     background: var(--white-color);
     border: none;
+    width: 100%;
+    max-width: 213px;
+    height: auto;
     border-radius: 4px;
-    padding: 16px 36px;
-    width: 213px;
-    height: 52px;
+    padding: 16px 0;
     font-family: var(--font-family);
     font-weight: 700;
     font-size: 16px;
     line-height: 125%;
     letter-spacing: 0.01em;
     color: var(--deep-teal-background);
-    margin: 30px 0;
-}
-h1, h2, h3, p, a {
-    word-break: break-word;
-    overflow-wrap: break-word;
+    box-sizing: border-box;
 }
 
-@media screen and (min-width: 390.2px) and (max-width: 480px) {
-    body {
-        width: 100%;
-        height: auto;
-    }
-    .header-img {
-        max-width: 480px;
-    }
-    /*Скрытое меню*/
-    .h-menu {
-        right: 85px;
-    }
-    
-}

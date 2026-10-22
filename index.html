@@ -12,35 +12,27 @@
         <script src="main.js" defer></script>
     </head>
     <body>
-        <header class="header-img"><!--фон страницы-->
+        <header class="header-img"><!--фон страницы-->  
+            <div class="h-top">
+                <img src="img/лого.svg" alt="Логотип Рум Тибет" class="logo-img">
+                <!--Кнопка бургера-->
+                <button type="button" class="new-menu" aria-label="Открыть меню"></button>
+            </div>
 
-            <div class="h-content">
-                <div class="h-top">
-                    <div class="h-logo">
-                        <img src="img/лого.svg" alt="Логотип Рум     Тибет"class="logo-img">
-                    </div>
+            <nav class="h-menu">
+                <!--Кнопка бургера-->
+                <button type="button" class="new-menu-2" aria-label="Закрыть меню"></button>
+                <ul>
+                    <li><a href="#">Про гида</a></li>
+                    <li><a href="#">Программа тура</a></li>
+                    <li><a href="#">Стоимость</a></li>
+                    <li><a href="#">Блог</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </nav>
 
-                    <!-- Кнопка бургера -->
-                    <button type="button" class="new-menu" aria-label="Открыть меню"></button>
-
-                    <nav class="h-menu">
-                        <!-- Кнопка бургера -->
-                        <button type="button" class="new-menu-2"     aria-label="Закрыть меню"></button>
-                        <ul>
-                            <li><a href="#">Про гида</a></li>
-                            <li><a href="#">Программа тура</a></li>
-                            <li><a href="#">Стоимость</a></li>
-                            <li><a href="#">Блог</a></li>
-                            <li><a href="#">Контакты</a></li>
-                        </ul>
-                    </nav>
-                </div>
-    
-                <div class="h-bottom">
-                    <h1>Насладись прогулкой в горы с командой единомышленников</h1>
-                    <button type="button" class="h-button">Найти программу</button>
-                </div> 
-            </div>   
+            <h1>Насладись прогулкой в горы с командой единомышленников</h1>
+            <button type="button" class="h-button">Найти программу</button>
         </header>
 
         <main>
