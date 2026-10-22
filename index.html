@@ -36,12 +36,20 @@
         </header>
 
         <main>
-            <section>
+            <section class="container-1">
                 <p>о нашем походе</p>
                 <h2>Исследуйте все горные массивы мира вместе с нами</h2>
                 <p>Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад. Ричард МакКлинток, профессор латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из самых странных слов в Lorem Ipsum, "consectetur"и занялся его поисками в классической латинской литературе.</p>
-                <button type="button">Программа тура</button>
-                <iframe src="" frameborder="0"></iframe> <!--Картинка - видео-->
+                <button type="button" class="button-1">Программа тура</button>
+
+                <div class="video-container">
+                    <!-- Тег видео. preload="metadata" экономит трафик пользователя-->
+                    <video id="my-video" poster="img/программа тура 2.jpg" preload="metadata">
+                        <source src="video/mountains.mp4" type="video/mp4">
+                    </video>
+                    <!-- Кастомная кнопка Play поверх видео -->
+                    <button type="button" class="video-play" aria-label="Воспроизвести видео"></button>
+                </div>
             </section>
 
             <section>
@@ -66,7 +74,7 @@
                 <button type="button">Стоимость программ</button>
             </section>
 
-            <section>
+            <section class="container-2">
                 <p>по версии отдыхающих</p>
                 <h2>Популярные направления</h2>
                 <div>
@@ -115,7 +123,7 @@
                 <button type="button">Рейтинг направлений</button>
             </section>
 
-            <section>
+            <section class="container-3">
                 <p>делимся впечатлениями</p>
                 <h2>Блог о путешествиях</h2>
                 <div>
@@ -151,7 +159,7 @@
                 <button type="button">Другие материалы</button>
             </section>
 
-            <section>
+            <section class="container-4">
                 <p>фото-отчет</p>
                 <h2>Делимся впечатлениями</h2>
 
@@ -210,6 +218,6 @@
 
             <p>ИП Константинопольский К.К., 2023</p>
             <p>Политика обработки персональных данных</p>
-        </footer>
+        </footer>-->
     </body>
     </html>

@@ -2,7 +2,6 @@ html {
     box-sizing: inherit;
     scroll-behavior: smooth; /*плавный переход по старнице*/
     -webkit-tap-highlight-color: transparent; /* Отменяет стандартную мобильную подсветку браузера */
-    overflow: hidden; /*скрывает все, что "вылезает" за пределы контейнера.*/
 }
 *, *::before, *::after {
     box-sizing: border-box;
@@ -11,7 +10,7 @@ html {
     --font-family: "Nunito Sans", sans-serif;
     --second-family: "NEXT ART", sans-serif;
     --white-color: #fdfdfd;
-    --black-color: #000;
+    --black-color: #18121e;;
     --yelow-color: #F2BE22;
     --grey-background: #F3F5F4;
     --deep-teal-background: #1A3E3E;
@@ -185,15 +184,95 @@ h1 {
     border: none;
     width: 100%;
     max-width: 213px;
-    height: auto;
+    height: 52px;
     border-radius: 4px;
-    padding: 16px 0;
     font-family: var(--font-family);
     font-weight: 700;
     font-size: 16px;
     line-height: 125%;
     letter-spacing: 0.01em;
     color: var(--deep-teal-background);
-    box-sizing: border-box;
+}
+
+/*container-1*/
+main {
+    padding: 0 16px;
+}
+.container-1 {
+    margin-top: 50px;
+}
+p {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 125%;
+    color: #f2be22;
+    padding-bottom: 8px;
+}
+h2 {
+    font-family: var(--font-family);
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 120%;
+    color: var(--black-color);
+}
+p:nth-last-of-type(1) {
+    line-height: 150%;
+    color: var(--black-color);
+    padding: 24px 0;
+}
+.button-1 {
+    display: block;
+    margin: 0 auto; 
+    width: 100%;
+    max-width: 176px;
+    height: 44px;
+    border-radius: 4px;
+    border: none;
+    background: var(--deep-teal-background);
+    color: var(--white-color);
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 125%;
+    letter-spacing: 0.01em;
+}
+/* Переносим все внешние размеры и отступы сюда */
+.video-container {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    max-width: 358px;
+    height: 416px;
+    margin: 40px auto 50px; /* Видео-блок ровно встанет по центру экрана */
+    
+}
+/* Тег видео внутри просто растягиваем на 100% */
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 24px;
+}
+.video-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 50px;
+    height: 50px;
+    background-image: url('img/play.svg'); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.video-play:hover {
+    transform: translate(-50%, -50%) scale(1.1); /* Легкий эффект увеличения при наведении*/
 }
 
