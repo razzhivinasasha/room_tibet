@@ -195,9 +195,13 @@ h1 {
 }
 
 /*container-1*/
-.container-1 {
+.container-1,
+.container-3 {
     margin-top: 50px;
     padding: 0 16px;
+}
+.container-3 {
+    padding: 0 0 0 16px;
 }
 h2 {
     font-weight: 400;
@@ -220,7 +224,8 @@ p {
     padding: 24px 0;
 }
 .button-1,
-.button-2 {
+.button-2,
+.button-3 {
     display: block;
     margin: 0 auto; 
     width: 100%;
@@ -320,3 +325,101 @@ h4 {
     padding: 0;
 }
 
+/*container-3*/
+.container-3-flex {
+    width: 100%;
+    margin: 32px 0;
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; /* ВКЛЮЧАЕМ ГОРИЗОНТАЛЬНЫЙ СКРОЛЛ */
+    overflow-y: hidden;  /* Защита от случайного вертикального скролла */
+    -webkit-overflow-scrolling: touch; /* ПЛАВНОСТЬ ПРОКРУТКИ НА СМАРТФОНАХ */
+    scroll-snap-type: x mandatory; /* Карточки будут аккуратно "магнититься" при пролистывании */
+    -ms-overflow-style: none;  /* для старого IE */
+    scrollbar-width: none;  /* для Firefox */
+}
+.container-3-flex::-webkit-scrollbar {
+    display: none; /*Прячем некрасивую полосу прокрутки браузера, оставляя сам скролл рабочим */
+}
+.card-1,
+.card-2,
+.card-3 {
+    position: relative;
+    z-index: 0;
+    width: 285px;
+    height: 400px;
+    flex-shrink: 0; /*запрещает флексам сжимать карточку */
+    scroll-snap-align: center; /* Плавная остановка карточки по центру экрана при скролле */
+    background-image: url(img/озеро\ в\ горах.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 32px;
+}
+.stars {
+    position: absolute;
+    z-index: 1;
+    top: 36.8px;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    width: 65px;
+    height: 32px;
+    border-radius: 4px 0 0 4px;
+    padding: 4px 8px;
+    backdrop-filter: blur(4px);
+    background: rgba(253, 253, 253, 0.4);
+}
+.stars>p {
+    font-size: 14px;
+    line-height: 129%;
+    font-weight: 700;
+    padding: 0;
+}
+.card-bottom {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    border-radius: 0 0 32px 32px;
+    width: 285px;
+    height: 70px;
+    backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.2);
+}
+.price {
+    width: 67px;
+    height: auto;
+    text-align: center;
+    padding: 6px 0;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.3);
+}
+.card-bottom>p,
+.price>p {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 120%;
+    color: var(--white-color);
+    padding: 0;
+}
+.price>p {
+    font-size: 16px;
+    line-height: 113%;
+}
+.button-3 {
+    width: 100%;
+    max-width: 220px;
+    padding: 12px 24px;   
+}
+.card-2 {
+    background-image: url(img/ночь\ в\ горах.jpg);
+}
+.card-3 {
+    background-image: url(img/йога\ в\ горах.jpg);
+}
