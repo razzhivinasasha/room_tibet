@@ -65,7 +65,7 @@ body {
 }
 
 /* Сбрасываем встроенные отступы у всех текстовых элементов и списков сразу */
-h1, h2, h3,h4, p, ul, a, li {
+h1, h2, h3, h4, p, ul, a, li {
     margin: 0;
     padding: 0;
     word-break: break-word;
@@ -225,7 +225,8 @@ p {
 }
 .button-1,
 .button-2,
-.button-3 {
+.button-3,
+.button-4 {
     display: block;
     margin: 0 auto; 
     width: 100%;
@@ -281,7 +282,8 @@ p {
 }
 
 /*container-2*/
-.container-2 {
+.container-2,
+.container-4 {
     background-color: var(--grey-background);
     padding: 50px 16px;
 }
@@ -326,7 +328,8 @@ h4 {
 }
 
 /*container-3*/
-.container-3-flex {
+.container-3-flex,
+.container-4-flex {
     width: 100%;
     margin: 32px 0;
     display: flex;
@@ -338,7 +341,8 @@ h4 {
     -ms-overflow-style: none;  /* для старого IE */
     scrollbar-width: none;  /* для Firefox */
 }
-.container-3-flex::-webkit-scrollbar {
+.container-3-flex::-webkit-scrollbar,
+.container-4-flex::-webkit-scrollbar {
     display: none; /*Прячем некрасивую полосу прокрутки браузера, оставляя сам скролл рабочим */
 }
 .card-1,
@@ -422,4 +426,86 @@ h4 {
 }
 .card-3 {
     background-image: url(img/йога\ в\ горах.jpg);
+}
+
+/*container-4*/
+.container-4 {
+    margin-top: 50px;
+    padding: 50px 0 50px 16px;
+}
+.container-4-flex {
+    width: 100%;
+    height: auto;
+    margin: 32px 0;
+}
+.cards {
+    flex-shrink: 0; /*запрещает флексам сжимать карточку */
+    scroll-snap-align: center; /* Плавная остановка карточки по центру экрана при скролле */
+    background-color: var(--white-color);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 285px;
+    height: 496px;
+}
+.img-card {
+    width: 100%;
+    max-width: 285px;
+    height: 280px;
+    border-radius: 6px 6px 0 0;
+    object-fit: cover;      
+    background-position: center; /* Центрирует изображение при обрезке */
+}
+.container-4-text {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+}
+h4 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 130%;
+    color: var(--black-color);
+}
+.container-4-text p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    color: var(--black-color);
+    padding: 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+}
+.text-3 p {
+    -webkit-line-clamp: 2;
+}
+.container-4-text.text-3 {
+    gap: 23px;
+}
+.text-4 p {
+    -webkit-line-clamp: none;
+}
+.container-4-text.text-4 {
+    gap: 20px;
+}
+.cards-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+.cards-bottom p {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 143%;
+    color: var(--yelow-color);
+    padding: 0;
+    margin: 0;
+}
+.cards-bottom p+p {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 143%;
+    color: var(--deep-teal-background);
 }
