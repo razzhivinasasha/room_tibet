@@ -56,10 +56,6 @@ body {
     font-family: var(--font-family);
     font-optical-sizing: auto;
     font-style: normal;
-    font-variation-settings:
-    "wdth" 100,
-    "YTLC" 500;
-    color: var(--black-color);
     margin: 0;
     padding: 0;
 }
@@ -203,20 +199,22 @@ h1 {
 .container-3 {
     padding: 0 0 0 16px;
 }
-h2 {
+section  p {
     font-weight: 400;
     font-size: 16px;
     line-height: 125%;
     color: #f2be22;
     padding-bottom: 8px;
 }
-h3 {
+h2 {
     font-weight: 800;
     font-size: 24px;
     line-height: 120%;
     color: var(--black-color);
 }
-p {
+.container-1 p:nth-last-of-type(1),
+.container-2 p:nth-last-of-type(1),
+.container-5-form p:nth-last-of-type(1) {
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
@@ -226,11 +224,13 @@ p {
 .button-1,
 .button-2,
 .button-3,
-.button-4 {
+.button-4,
+.button-5,
+.button-6 {
     display: block;
     margin: 0 auto; 
     width: 100%;
-    max-width: 176px;
+    max-width: 240px;
     height: 44px;
     border-radius: 4px;
     border: none;
@@ -241,6 +241,7 @@ p {
     font-size: 16px;
     line-height: 125%;
     letter-spacing: 0.01em;
+    padding: 12px 24px;
 }
 /* Переносим все внешние размеры и отступы сюда */
 .video-container {
@@ -316,7 +317,7 @@ p {
     grid-column: 1/2;
     grid-row: 3/4;
 }
-h4 {
+h3 {
     font-weight: 700;
     font-size: 18px;
     line-height: 111%;
@@ -329,7 +330,8 @@ h4 {
 
 /*container-3*/
 .container-3-flex,
-.container-4-flex {
+.container-4-flex,
+.container-5-flex {
     width: 100%;
     margin: 32px 0;
     display: flex;
@@ -342,7 +344,8 @@ h4 {
     scrollbar-width: none;  /* для Firefox */
 }
 .container-3-flex::-webkit-scrollbar,
-.container-4-flex::-webkit-scrollbar {
+.container-4-flex::-webkit-scrollbar,
+.container-5-flex::-webkit-scrollbar {
     display: none; /*Прячем некрасивую полосу прокрутки браузера, оставляя сам скролл рабочим */
 }
 .card-1,
@@ -381,6 +384,7 @@ h4 {
     line-height: 129%;
     font-weight: 700;
     padding: 0;
+    color: var(--deep-teal-background);
 }
 .card-bottom {
     position: absolute;
@@ -429,7 +433,8 @@ h4 {
 }
 
 /*container-4*/
-.container-4 {
+.container-4,
+.container-5 {
     margin-top: 50px;
     padding: 50px 0 50px 16px;
 }
@@ -508,4 +513,65 @@ h4 {
     font-size: 14px;
     line-height: 143%;
     color: var(--deep-teal-background);
+}
+
+/*container-5*/
+.img-photo {
+    flex-shrink: 0; /*запрещает флексам сжимать карточку */
+    scroll-snap-align: center; /* Плавная остановка карточки по центру экрана при скролле */
+    width: 100%;
+    max-width: 280px;
+    height: 496px;
+    height: 250px;
+    border-radius: 6px;
+    object-fit: cover;
+    background-position: center;
+}
+
+.container-5-form {
+    width: 100%;
+    max-width: 358px;
+    height: auto;
+    box-shadow: 0 0 15px 0 rgba(24, 18, 30, 0.12);
+    background: var(--white-color);
+    margin: 50px 0;
+    padding: 24px;
+    border-radius: 6px;
+}
+label {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 125%;
+    color: var(--black-color)
+}
+form {
+    margin-top: 18px;
+}
+.button-6 {
+    margin: 0; 
+}
+input {
+    width: 100%;
+    max-width: 310px;
+    height: 44px;
+    margin: 8px 0 16px;
+    padding: 12px 0 12px 16px;
+    background-color: var(--grey-background);
+    border: none;
+    border-radius: 4px;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 143%;
+    color: var(--black-color);
+}
+.container-5-form p {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 129%;
+    color: var(--black-color);
+}
+span {
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
 }
