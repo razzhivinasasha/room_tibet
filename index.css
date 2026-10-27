@@ -145,38 +145,45 @@ h1, h2, h3, h4, p, ul, a, li {
     padding: 16px;
 }
 li {
-    display: flex;
-    align-items: center;
-    list-style: none;/* отключаем стандартный маркер у всех */
+    list-style: none;
     position: relative;
 }
-li+li {
+li + li {
     padding-top: 16px;
 }
-li::before {
-    content: "";
-    position: absolute;
-    left: -16px;
-    background-image: url('img/li.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    width: 6px;
-    height: 10px;
-}
-li:active::before {
-    background-image: url('img/li-yellow.svg'); 
-}
-a {
+li > a {
+    display: flex; 
+    align-items: center;
+    gap: 8px;
+    padding-left: 16px;
+    position: relative;
     text-decoration: none;
     font-weight: 400;
     font-size: 14px;
     line-height: 129%;
     color: var(--white-color);
 }
-a:active {
+/* иконка — псевдоэлемент ссылки */
+li > a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 10px;
+    background-image: url('img/li.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+/* :active на ссылке — срабатывает и на десктопе, и на тач-устройствах */
+li > a:active {
     text-decoration: underline;
     color: var(--yelow-color);
+}
+li > a:active::before {
+    background-image: url('img/li-yellow.svg');
 }
 h1 {
     color: var(--white-color);
