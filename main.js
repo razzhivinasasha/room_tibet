@@ -41,3 +41,6 @@ menuClose.addEventListener('click', () => {
     menu2.classList.remove('is-open'); // Гарантированно закроет меню
 });
 
+// Просто "включаем" :active на мобильных Safari/Chrome
+document.addEventListener('touchstart', function() {}, { passive: true });
+
