@@ -140,20 +140,32 @@ h1, h2, h3, h4, p, ul, a, li {
     margin-left: auto; 
     display: block;
 }
-.h-menu ul {
+.h-menu ul,
+.f-menu {
     padding: 16px;
+}
+li {
+    display: flex;
+    align-items: center;
+    list-style: none;/* отключаем стандартный маркер у всех */
+    position: relative;
 }
 li+li {
     padding-top: 16px;
 }
-li {
-    list-style-type: none;
-    /* Указываем путь к иконке-маркеру*/
-    list-style-image: url('img/li.svg');
-    
+li::before {
+    content: "";
+    position: absolute;
+    left: -16px;
+    background-image: url('img/li.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 6px;
+    height: 10px;
 }
-li:active {
-    list-style-image: url('img/li-yellow.svg'); 
+li:active::before {
+    background-image: url('img/li-yellow.svg'); 
 }
 a {
     text-decoration: none;
@@ -552,8 +564,7 @@ form {
     margin: 0; 
 }
 input {
-    width: 100%;
-    max-width: 310px;
+    width: 100%;   
     height: 44px;
     margin: 8px 0 16px;
     padding: 12px 0 12px 16px;
@@ -574,4 +585,69 @@ input {
 span {
     text-decoration: underline;
     text-decoration-skip-ink: none;
+}
+
+/*Footer*/
+footer {
+    background-color: var(--deep-teal-background);
+    padding: 50px 16px 0;
+}
+footer > h2 {
+    color: var(--white-color);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 120%;
+    padding-bottom: 20px;
+}
+footer p {
+    color: var(--white-color);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+}
+.contact a,
+.f-bottom a {
+    text-decoration: underline;
+    color: var(--white-color)
+}
+.contact {
+    display: flex;
+    gap: 24px;
+    padding: 30px 0;
+}
+.icon {
+    display: flex;
+    gap: 16px;
+    padding-bottom: 50px;
+}
+.img-icon {
+    width: 100%;
+    max-width: 32px;
+    height: auto;
+}
+.f-menu-1 {
+    padding-bottom: 50px;
+}
+.f-menu-2 {
+    padding-bottom: 80px;
+}
+.li-flex {
+    display: flex;
+    gap: 20px; 
+}
+.bottom-new {
+    background-color: white;
+    border-radius: 4px;
+    padding: 2px 10px;
+    color: var(--deep-teal-background);
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 133%;
+    text-transform: lowercase;
+}
+.f-bottom {
+    text-align: center;
+    background-color: var(--black-color);
+    margin: 0 -16px; 
+    padding: 20px 0;
 }
